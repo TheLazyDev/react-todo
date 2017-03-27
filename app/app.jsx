@@ -5,7 +5,7 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 
 
-
+var TodoApp = require('TodoApp');
 
 // Load foundation
 
@@ -18,7 +18,7 @@ require('style!css!sass!applicationStyles');
 
 
 ReactDOM.render(
-          <p>BoilerplateTemplate</p>,
+          <TodoApp />,
           document.getElementById('app')
 );
 
