@@ -11,7 +11,7 @@ var TodoList = require('TodoList');
 var Todo = require('Todo');
 
 
-describe('Todo', ()=>{
+describe('TodoList', ()=>{
     it('should exist', ()=>{
         expect(TodoList).toExist()
     })
