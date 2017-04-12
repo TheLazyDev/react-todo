@@ -53,7 +53,7 @@ describe('TodoApp', ()=>{
         todoApp.handleToggle(11);
 
         expect(todoApp.state.todos[0].completed).toBe(true);
-
+        
     })
 })
 
