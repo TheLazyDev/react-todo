@@ -67,7 +67,7 @@ describe('TodoAPI', ()=>{
            })
 
 
-           it('should return todo if valid array in localStorage', ()=>{
+           it('should return todos if valid array in localStorage', ()=>{
                      var todos = [
                    {
                        id: 23,
