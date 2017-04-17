@@ -6,7 +6,7 @@ var expect = require('expect');
 var $ = require('jquery');
 
 
-var Todo = require('Todo');
+var {Todo} = require('Todo');
 
 
 describe('Todo', ()=>{
@@ -16,7 +16,7 @@ describe('Todo', ()=>{
 
 
 
-    it('should call onToggle prop with id on click ',()=>{
+    it('should dispatch TOGGLE_TODO action on click ',()=>{
         var todoData = {
             id:12,
             text:'Write todo.test.jsx test',
@@ -27,12 +27,15 @@ describe('Todo', ()=>{
 
         var spy = expect.createSpy();
 
-        var todo = TestUtils.renderIntoDocument(<Todo {...todoData} onToggle={spy} />);
+        var todo = TestUtils.renderIntoDocument(<Todo {...todoData} dispatch={spy} />);
 
         var $el = $(ReactDOM.findDOMNode(todo));
         TestUtils.Simulate.click($el[0]);
 
-        expect(spy).toHaveBeenCalledWith(12);
+        expect(spy).toHaveBeenCalledWith({
+            type: 'TOGGLE_TODO',
+            id: todoData.id
+        });
 
         
     })
