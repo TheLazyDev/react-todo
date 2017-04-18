@@ -6,19 +6,25 @@ var path = require('path');
 var envFile = require('node-env-file');
 
 
+console.log(process.env.NODE_ENV);
+
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
+
+console.log(process.env.NODE_ENV);
+
+
+
+
 try {
 
 
     envFile(path.join(__dirname, 'config/' + process.env.NODE_ENV + '.env'));
 
+
 } catch (e) {
 
 }
 
-
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
-
-console.log(process.env.NODE_ENV);
 
 module.exports = {
     entry: [
