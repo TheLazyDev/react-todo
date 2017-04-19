@@ -14,7 +14,7 @@ import TodoSearch from 'TodoSearch';
 
 
 
-export var TodoApp = React.createClass({
+export class TodoApp extends React.Component{
      
 
      onLogout(e){
@@ -25,7 +25,7 @@ export var TodoApp = React.createClass({
 
          dispatch(actions.startLogout());
 
-     },
+     }
       render() {
 
 
@@ -33,7 +33,7 @@ export var TodoApp = React.createClass({
             <div>
 
                 <div className='page-actions'>
-                    <a href="#" onClick={this.onLogout}> Logout </a>
+                    <a href="#" onClick={this.onLogout.bind(this)}> Logout </a>
                 </div>
 
                 <h1 className='page-title'> Todo App </h1>
@@ -55,7 +55,7 @@ export var TodoApp = React.createClass({
         )
     }
 
-});
+};
 
 
 
